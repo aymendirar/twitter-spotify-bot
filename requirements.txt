@@ -5,7 +5,9 @@ click==7.1.2
 futures==3.1.1
 goslate==1.5.1
 idna==2.9
+lxml==4.5.1
 oauthlib==3.1.0
+py-thesaurus==1.0.5
 PyDictionary==1.5.2
 PySocks==1.7.1
 requests==2.23.0
