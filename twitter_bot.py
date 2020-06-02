@@ -3,7 +3,7 @@ import time
 
 from secrets import twitter_api_key, twitter_api_secret_key, twitter_access_token, twitter_access_token_secret
 
-    # EFFECTS: sets up client for use
+# EFFECTS: sets up bot for use
 def initialize_bot(self):
     auth = tweepy.OAuthHandler(twitter_api_key, twitter_api_secret_key)
     auth.set_access_token(twitter_access_token, twitter_access_token_secret)
