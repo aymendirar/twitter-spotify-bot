@@ -45,8 +45,7 @@ class SpotifyClient:
         list_track_uris = [tracks["tracks"]["items"][i]["uri"] for i in range(limit)]
         return list_track_uris
     
-        
-# spotipy.oauth2.SpotifyOAuth.refresh_access_token()
+
 client = SpotifyClient()
 print("worked")
 client.create_playlist_with_tracks("happy")
