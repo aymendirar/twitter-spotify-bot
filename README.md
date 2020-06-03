@@ -6,6 +6,8 @@ This is a Twitter bot that, when tweeted at with a username and an artist name, 
 
 To use the bot, run the script in twitter_bot.py
 
+Ensure you create a secrets.py file in the folder with the appropriate api keys and variable names.
+
 In order for it work properly the tweet should be formatted as the following:
 > @spotify_gen [username] [search-string]
 
