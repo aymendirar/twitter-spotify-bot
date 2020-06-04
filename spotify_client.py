@@ -44,3 +44,4 @@ class SpotifyClient:
         # extracts artist's top songs uris
         list_track_uris = [track_data["tracks"][i]["uri"] for i, data in enumerate(track_data["tracks"])]
         return list_track_uris
+    

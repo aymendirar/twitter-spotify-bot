@@ -9,7 +9,7 @@ FILE_NAME = 'last_seen_id.txt'
 # sets up bot for use in file
 auth = tweepy.OAuthHandler(twitter_api_key, twitter_api_secret_key)
 auth.set_access_token(twitter_access_token, twitter_access_token_secret)
-twitter_api = tweepy.API(auth)
+twitter_api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True) # prints to console when rate limit is exceeded
         
 # EFFECTS: gets the last seen id that was tweeted at the bot
 def get_last_seen_id():
@@ -29,9 +29,9 @@ def store_last_seen_id(last_seen_id):
 def run_twitter_bot():
     try: 
         last_seen_id = get_last_seen_id()
-        print(last_seen_id)
+        print(last_seen_id) # to keep track
     except:
-        last_seen_id = 1267983029684690944 # place holder if last_seen_id is empty
+        last_seen_id = 1268671718656110593 # place holder if last_seen_id is empty
     
     mentions = twitter_api.mentions_timeline(last_seen_id)
     
@@ -51,7 +51,7 @@ def run_twitter_bot():
                 spotify_bot = spotify_client.SpotifyClient(spotify_username)
                 spotify_bot.create_playlist_with_tracks(search_string)
                 playlist_url = spotify_bot.playlist_url
-                twitter_api.update_status("@" + mention.user.screen_name + " Your new playlist was created! Click this link to listen to check it out: " + playlist_url, mention.id)
+                twitter_api.update_status("@" + mention.user.screen_name + " Your new playlist was created! Click this link to check it out: " + playlist_url, mention.id)
             except:
                 twitter_api.update_status("@" + mention.user.screen_name + " Hey! Something went wrong when I tried connecting to Spotify. Please make sure your username is correct and try again. If the problem persists, please contact the developer.", mention.id)
         else:

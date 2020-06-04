@@ -8,6 +8,8 @@ To use the bot, run the script in twitter_bot.py
 
 Ensure you create a secrets.py file in the folder with the appropriate api keys and variable names.
 
+First, follow the bot on twitter in order for it to receive your tweets.
+
 In order for it work properly the tweet should be formatted as the following:
 > @spotify_gen [username] [search-string]
 
